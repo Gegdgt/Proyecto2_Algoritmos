@@ -1,5 +1,5 @@
-## Gabriel García - 21352
-## Sebas Juárez - 21471
+#### Gabriel García - 21352
+#### Sebas Juárez - 21471
 
 # Proyecto ADA - Maximum Subarray Sum
 
