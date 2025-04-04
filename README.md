@@ -51,3 +51,24 @@ Este enfoque sigue la estrategia de:
 - Tiempo: **O(n log n)**
 - Espacio: **O(log n)** por llamadas recursivas
 
+## Implementación con Programación Dinamica
+
+Archivo: `MMaximum_Subarray_Sum_PD.py`
+
+Este enfoque sigue la estrategia de´:
+
+- **Estado:** en cada posición `i`, se guarda la suma máxima de un subarreglo que termina en esa posición.
+- **Transición:** decidir si extender el subarreglo anterior o comenzar uno nuevo:
+
+  ```python
+    max_actual = max(arr[i], max_actual + arr[i])
+    max_global = max(max_global, max_actual)
+    ```
+
+- **Resultado final**: `max_global` guarda la mayor suma encontrada en todo el arreglo.
+
+### Complejidad
+- Tiempo: **O(n)**
+- Espacio: **O(1)**
+
+Este algoritmo recorre el arreglo una sola vez y utiliza solo variables auxiliares, lo que lo hace muy eficiente.
