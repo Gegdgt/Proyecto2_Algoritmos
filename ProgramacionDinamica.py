@@ -2,7 +2,6 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Función de programación dinámica
 def tiling_problem(n):
     if n == 0 or n == 1:
         return 1
@@ -16,15 +15,12 @@ def tiling_problem(n):
 
     return dp[n]
 
-# Leer entradas desde el archivo
 with open("entradas.txt", "r") as file:
     entradas = [int(line.strip()) for line in file.readlines() if line.strip().isdigit()]
 
-# Listas para graficar
 tiempos = []
 valores_n = []
 
-# Calcular tiempos
 for n in entradas:
     inicio = time.time()
     resultado = tiling_problem(n)
@@ -36,11 +32,9 @@ for n in entradas:
 
     print(f"n = {n}, formas = {resultado}, tiempo = {duracion:.6f} segundos")
 
-# Ajuste lineal (regresión)
 coef = np.polyfit(valores_n, tiempos, deg=1)
 linea_ajustada = np.poly1d(coef)
 
-# Graficar puntos y línea de regresión
 plt.figure(figsize=(10, 6))
 plt.plot(valores_n, tiempos, marker='o', label='Tiempos reales')
 plt.plot(valores_n, linea_ajustada(valores_n), color='red', linestyle='--', label=f'Regresión lineal: y = {coef[0]:.2e}x + {coef[1]:.2e}')
